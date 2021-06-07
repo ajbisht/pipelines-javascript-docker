@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: javapipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javapipeline
+  template:
+    metadata:
+      labels:
+        app: javapipeline 
+    spec:
+      containers:
+        - name: javapipeline 
+          image: mycontainerregistryaj.azurecr.io/javapipeline
+          ports:
+          - containerPort: 8080
